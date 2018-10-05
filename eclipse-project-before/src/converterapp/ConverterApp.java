@@ -9,10 +9,17 @@ import java.util.Scanner;
 public class ConverterApp {
 
 	public static void main(String args[]) {
-		File input = getInputFile();
-		File output = getOutputFile();
-
-		transform(input, output);
+		File input = FilesUI.getInputFile();
+		File output = FilesUI.getOutputFile();
+		try {
+			Reader reader = new FileReader(input);
+			Writer writer = new FileWriter(output);
+			Transformer transformer = new TABtoXMLTransformer();
+			Converter converter = new Converter(reader, transformer, writer);
+			converter.convert();
+		} catch (FileNotFoundException e) {
+			System.out.println("Fichero de origen o destino no encontrado. \n" + e.getMessage());
+		}
 	}
 
 	public static void transform(File input, File output) {
@@ -53,21 +60,4 @@ public class ConverterApp {
 
 	}
 
-	private static File getInputFile() {
-		System.out.println("input filename: ");
-		return getFile();
-	}
-
-	private static File getOutputFile() {
-		System.out.println("output filename: ");
-		return getFile();
-	}
-
-	private static File getFile() {
-		@SuppressWarnings("resource")
-		Scanner in = new Scanner(System.in);
-		String name = in.nextLine();
-
-		return new File(name);
-	}
 }

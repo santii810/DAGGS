@@ -1,21 +1,25 @@
 package converterapp;
 
 import java.io.File;
+import java.util.Scanner;
 
 public class FilesUI {
-	private String origin;
-	private String destination;
 
-	public FilesUI(String origin, String destination) {
-		this.origin = origin;
-		this.destination = destination;
+
+	public static File getInputFile() {
+		System.out.println("input filename: ");
+		return getFile();
 	}
 
-	public File getOriginFile() {
-		return new File(origin);
+	public static File getOutputFile() {
+		System.out.println("output filename: ");
+		return getFile();
 	}
 
-	public File getDestinationFile() {
-		return new File(destination);
+	private static File getFile() {
+		@SuppressWarnings("resource")
+		Scanner in = new Scanner(System.in);
+		String name = in.nextLine();
+		return new File(name);
 	}
 }

@@ -1,13 +1,14 @@
 package converterapp;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
 
 public class FileWriter implements Writer {
 	private PrintStream out;
 
-	public FileWriter(String fileName) throws FileNotFoundException {
-		out = new PrintStream(fileName);
+	public FileWriter(File output) throws FileNotFoundException {
+		out = new PrintStream(output);
 	}
 
 	@Override
@@ -15,8 +16,8 @@ public class FileWriter implements Writer {
 		out.print(toWrite);
 	}
 
-	public void closeWriting() {
+	@Override
+	public void closeWriteWork() {
 		out.close();
-
 	}
 }

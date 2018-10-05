@@ -12,12 +12,14 @@ public class Converter {
 	}
 
 	public void convert() {
+
 		String transformingText;
+		writer.write(transformer.getHeader());
 		while ((transformingText = reader.read()) != null) {
-			transformingText = transformer.transform(transformingText);
-			writer.write(transformingText);
+			writer.write(transformer.transform(transformingText));
 		}
-		
+		writer.write(transformer.getFooter());
+		writer.closeWriteWork();
 
 	}
 }

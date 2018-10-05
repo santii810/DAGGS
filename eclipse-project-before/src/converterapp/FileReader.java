@@ -1,13 +1,14 @@
 package converterapp;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class FileReader implements Reader {
 	private Scanner scanner;
 
-	public FileReader(String fileName) throws FileNotFoundException {
-		scanner = new Scanner(fileName);
+	public FileReader(File input) throws FileNotFoundException {
+		scanner = new Scanner(input);
 	}
 
 	@Override
