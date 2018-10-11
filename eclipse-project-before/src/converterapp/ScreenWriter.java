@@ -9,7 +9,7 @@ public class ScreenWriter implements Writer {
 
 	@Override
 	public void closeWriteWork() {
-		// Not necesary
+		// Not necessary
 	}
 
 }
