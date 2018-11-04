@@ -1,3 +1,4 @@
+package model;
 
 public class Autor {
 	private String nombre;
@@ -8,6 +9,11 @@ public class Autor {
 	}
 
 	public String getNombre() {
+		return nombre;
+	}
+
+	@Override
+	public String toString() {
 		return nombre;
 	}
 
