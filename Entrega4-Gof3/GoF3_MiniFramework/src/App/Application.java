@@ -83,7 +83,6 @@ public abstract class Application implements Observer {
 				} else {
 					isValidNumber = true;
 				}
-				System.out.println(selectedOption);
 			} catch (NumberFormatException nfe) {
 				Logger.getInstance().log("Incorrect format input", Logger.INFO);
 			}
