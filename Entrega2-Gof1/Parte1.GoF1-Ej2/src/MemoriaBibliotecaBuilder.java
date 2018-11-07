@@ -18,6 +18,5 @@ public class MemoriaBibliotecaBuilder implements BibliotecaBuilder {
 	public String toString() {
 		return library.toString();
 	}
-	
-	
+
 }

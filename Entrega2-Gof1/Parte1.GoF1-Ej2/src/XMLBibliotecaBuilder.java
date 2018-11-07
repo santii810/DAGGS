@@ -3,7 +3,6 @@ import java.util.List;
 
 import IO.FileWriter;
 import model.Autor;
-import model.Biblioteca;
 import model.Libro;
 
 public class XMLBibliotecaBuilder implements BibliotecaBuilder {

@@ -1,7 +1,6 @@
 import java.io.FileNotFoundException;
 
 import IO.FileReader;
-import model.Autor;
 
 public class LibrosTransformer {
 	private FileReader reader;
