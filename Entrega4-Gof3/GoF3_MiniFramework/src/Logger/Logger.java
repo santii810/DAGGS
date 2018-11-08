@@ -1,4 +1,5 @@
 package Logger;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 
@@ -7,7 +8,7 @@ public abstract class Logger {
 	public static final int INFO = 1;
 	public static final int ERROR = 2;
 	private static final String DEFAULT_LOG_FILE = "output.log";
-	
+
 	private static Logger singleton;
 	private Logger next;
 	private int threshold;
@@ -19,14 +20,15 @@ public abstract class Logger {
 
 	public static Logger getInstance() throws FileNotFoundException {
 		if (singleton == null) {
-			//TODO preguntar "Por que asi?" "Como se añaden nuevos logs en la CoR"
+			// TODO cuando hago un DEBUG y cuando un ERROR?
 			singleton = new ConsoleLogger(new FileLogger(null, DEBUG, new File(DEFAULT_LOG_FILE)), INFO);
+//			singleton = new ConsoleLogger(new FileLogger(new FileLogger(null, ERROR, new File(DEFAULT_LOG_FILE)), DEBUG,
+//					new File(DEFAULT_LOG_FILE)), INFO);
 		}
 
 		return singleton;
 	}
-	
-	
+
 	public void log(String message, int priority) {
 		if (priority >= this.threshold) {
 			_log(message, priority);

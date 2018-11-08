@@ -16,11 +16,11 @@ public abstract class Application implements Observer {
 
 	@Override
 	public void update(Observable observable, Object arg) {
-		// TODO REVUSAR
 		Operation observado = (Operation) observable;
 		try {
 			Logger.getInstance().log(
-					"Program " + observado.getName() + " is in " + observado.getProgress() + "% progress.", Logger.INFO);
+					"Program " + observado.getName() + " is in " + observado.getProgress() + "% progress.",
+					Logger.INFO);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
