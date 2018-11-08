@@ -20,7 +20,7 @@ public abstract class Application implements Observer {
 		Operation observado = (Operation) observable;
 		try {
 			Logger.getInstance().log(
-					"Program " + observado.getName() + "is in " + observado.getProgress() + "% progress", Logger.INFO);
+					"Program " + observado.getName() + " is in " + observado.getProgress() + "% progress.", Logger.INFO);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}

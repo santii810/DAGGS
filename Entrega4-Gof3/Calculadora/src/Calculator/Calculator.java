@@ -1,9 +1,14 @@
+package Calculator;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import App.Application;
 import App.Operation;
+import Operations.Division;
+import Operations.PayOperation;
+import Operations.SquareRoot;
+import Operations.Sum;
 
 public class Calculator extends Application {
 
@@ -13,7 +18,7 @@ public class Calculator extends Application {
 
 		Operation sum = new Sum();
 		Operation division = new Division();
-		Operation protectedSR = new ProtectedOperation(new SquareRoot());
+		Operation protectedSR = new PayOperation(new SquareRoot());
 
 		sum.addObserver(this);
 		division.addObserver(this);

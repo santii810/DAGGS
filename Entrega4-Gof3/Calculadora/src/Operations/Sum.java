@@ -1,3 +1,5 @@
+package Operations;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,8 +18,10 @@ public class Sum extends Operation {
 	@Override
 	public String execute(List<String> parameters) {
 		float result = 0;
+		this.setProgress(0);
 		for (String string : parameters) {
 			result += Float.parseFloat(string);
+			this.setProgress(this.getProgress() + 100 / parameters.size());
 		}
 		return Float.toString(result);
 	}

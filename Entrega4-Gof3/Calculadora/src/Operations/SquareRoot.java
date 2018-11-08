@@ -1,3 +1,5 @@
+package Operations;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,8 +15,17 @@ public class SquareRoot extends Operation {
 
 	@Override
 	public String execute(List<String> parameters) {
-
-		return Double.toString(Math.sqrt(Float.parseFloat(parameters.get(0))));
+		// TODO preguntar porque no hace update
+		this.setProgress(0);
+		String strNumber = parameters.get(0);
+		this.setProgress(5);
+		float num = Float.parseFloat(strNumber);
+		this.setProgress(15);
+		double result = Math.sqrt(num);
+		this.setProgress(90);
+		String toret = Double.toString(result);
+		this.setProgress(100);
+		return toret;
 	}
 
 	@Override
