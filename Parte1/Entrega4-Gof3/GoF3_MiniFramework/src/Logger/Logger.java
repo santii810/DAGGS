@@ -20,10 +20,8 @@ public abstract class Logger {
 
 	public static Logger getInstance() throws FileNotFoundException {
 		if (singleton == null) {
-			// TODO cuando hago un DEBUG y cuando un ERROR?
-			singleton = new ConsoleLogger(new FileLogger(null, DEBUG, new File(DEFAULT_LOG_FILE)), INFO);
-//			singleton = new ConsoleLogger(new FileLogger(new FileLogger(null, ERROR, new File(DEFAULT_LOG_FILE)), DEBUG,
-//					new File(DEFAULT_LOG_FILE)), INFO);
+			singleton = new ConsoleLogger(new FileLogger(new FileLogger(null, ERROR, new File(DEFAULT_LOG_FILE)), DEBUG,
+					new File(DEFAULT_LOG_FILE)), INFO);
 		}
 
 		return singleton;
